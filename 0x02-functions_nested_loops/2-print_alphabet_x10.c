@@ -1,6 +1,8 @@
 #include "main.h"
+
 /**
- * print_alhapbet_x10 - a function that prints 10 times the alphabet.
+ * print_alphabet_x10 - Prints 10 times the alphabet, in lowercase.
+ * Return. Always 0.
  */
 void print_alphabet_x10(void)
 {
@@ -14,6 +16,7 @@ void print_alphabet_x10(void)
 		{
 			_putchar(ch);
 		}
+		_putchar('\n');
 	}
-	_putchar('\n');
+
 }
