@@ -13,7 +13,7 @@ char *_strcat(char *dest, char *src)
 
 	while (dest[i++])
 		destLen++;
-	for (i = 0; src[i++]; i++)
+	for (i = 0; src[i]; i++)
 		dest[destLen++] = src[i];
 	return (dest);
 }
