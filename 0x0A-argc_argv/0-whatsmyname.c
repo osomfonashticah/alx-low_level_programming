@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include "main.h"
 /**
  * main - function to print it name
  * @argc:counts number of inputs
