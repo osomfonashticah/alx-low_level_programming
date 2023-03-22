@@ -1,5 +1,5 @@
 #ifndef FUNCTION_POINTERS_H
-#define FUNCTION_POINTER_H
+#define FUNCTION_POINTERS_H
 
 /*
  * Desc: Header file containing prototypes for all functions
