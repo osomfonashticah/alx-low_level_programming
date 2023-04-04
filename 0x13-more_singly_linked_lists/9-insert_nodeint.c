@@ -5,47 +5,39 @@
 *@head: a pointer to the address of the head
 *@idx: the index of the listint_t list
 *@n: the integer
-*Return: the address of the new node
+*Return: the address of the new_node node
 */
-
 
 
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	listint_t *newNode = (listint_t *) malloc(sizeof(listint_t));
+	listint_t *new_node, *copy_old = *head;
+	unsigned int node;
 
-	if (newNode == NULL)
+	new_node = malloc(sizeof(listint_t));
+	if (new_node == NULL)
 		return (NULL);
 
-	newNode->data = n;
-
-	newNode->next = NULL;
+	new_node->n = n;
 
 	if (idx == 0)
 	{
-		newNode->next = *head;
-		*head = newNode;
-		return (newNode);
+		new_node->next = copy_old;
+		*head = new_node;
+		return (new_node);
 	}
 
-	listint_t *currentNode = *head;
-	unsigned int currentPosition = 0;
-
-	while (currentPosition < idx - 1 && currentNode != NULL)
+	for (node = 0; node < (idx - 1); node++)
 	{
-		currentNode = currentNode->next;
-		currentPosition++;
+		if (copy_old == NULL || copy_old->next == NULL)
+			return (NULL);
+
+		copy_old = copy_old->next;
 	}
 
-	if (currentNode == NULL || currentPosition < idx - 1)
-	{
-		free(newNode);
-		return (NULL);
-	}
+	new_node->next = copy_old->next;
+	copy_old->next = new_node;
 
-	newNode->next = currentNode->next;
-	currentNode->next = newNode;
-
-	return (newNode);
+	return (new_node);
 }
 
