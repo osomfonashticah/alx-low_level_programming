@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "lists.h"
 
 /**
 *insert_nodeint_at_index - insert a new node to a listint_t
