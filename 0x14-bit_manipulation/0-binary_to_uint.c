@@ -6,7 +6,7 @@
  * Return:converted decimal
  */
 
-igned int binary_to_uint(const char *b)
+unsigned int binary_to_uint(const char *b)
 {
 	unsigned int res = 0, base = 1;
 	int i;
